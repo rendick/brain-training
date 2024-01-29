@@ -22,6 +22,14 @@ var (
 var Answer int
 var Continue int
 
+func ResultCorrect(text string) {
+	fmt.Printf(Green+Bold+"\n%s"+Reset+"\n------\n\n", text)
+}
+
+func ResultIncorrect(text string) {
+	fmt.Printf(Red+Bold+"\n%s"+Reset+"\n------\n\n", text)
+}
+
 func main() {
 	if len(os.Args) != 4 {
 		fmt.Println("Not enough arguments!")
@@ -47,27 +55,27 @@ func main() {
 		switch os.Args[3] {
 		case "+":
 			if Answer == (RandHundOne + RandHundTwo) {
-				fmt.Printf(Green + Bold + "\nCorrect!" + Reset + "\n------\n\n")
+				ResultCorrect("Correct!")
 			} else {
-				fmt.Printf(Red + Bold + "\nIncorrect! Try again." + Reset + "\n------\n\n")
+				ResultIncorrect("Incorrect!")
 			}
 		case "-":
 			if Answer == (RandHundOne - RandHundTwo) {
-				fmt.Printf(Green + Bold + "\nCorrect!" + Reset + "\n------\n\n")
+				ResultCorrect("Correct!")
 			} else {
-				fmt.Printf(Red + Bold + "\nIncorrect! Try again." + Reset + "\n------\n\n")
+				ResultIncorrect("Incorrect!")
 			}
 		case "*":
 			if Answer == (RandHundOne / RandHundTwo) {
-				fmt.Printf(Green + Bold + "\nCorrect!" + Reset + "\n------\n\n")
+				ResultCorrect("Correct!")
 			} else {
-				fmt.Printf(Red + Bold + "\nIncorrect! Try again." + Reset + "\n------\n\n")
+				ResultIncorrect("Incorrect!")
 			}
 		case "/":
 			if Answer == (RandHundOne * RandHundTwo) {
-				fmt.Printf(Green + Bold + "\nCorrect!" + Reset + "\n------\n\n")
+				ResultCorrect("Correct!")
 			} else {
-				fmt.Printf(Red + Bold + "\nIncorrect! Try again." + Reset + "\n------\n\n")
+				ResultIncorrect("Incorrect!")
 			}
 		}
 	}
